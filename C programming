@@ -7,7 +7,7 @@ int globalVar = 100;
 void demoLocalScope() {
     // Local variable with local scope
     int localVar = 50;
-    std::cout << "Local Variable: " << localVar << std::endl;
+    std::cout << "Local Variable: " << localVar << std::endl
 
     // Accessing the global variable from inside the function
     std::cout << "Global Variable (inside the function): " << globalVar << std::endl;
