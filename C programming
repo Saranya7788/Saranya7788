@@ -1,0 +1,43 @@
+#include <iostream>
+
+// Global variable with global scope
+int globalVar = 100;
+
+// Function with local scope
+void demoLocalScope() {
+    // Local variable with local scope
+    int localVar = 50;
+    std::cout << "Local Variable: " << localVar << std::endl;
+
+    // Accessing the global variable from inside the function
+    std::cout << "Global Variable (inside the function): " << globalVar << std::endl;
+}
+
+// Class with class scope
+class DemoClass {
+public:
+    // Class member variable with class scope
+    int classVar = 200;
+
+    void printClassVar() {
+        std::cout << "Class Variable: " << classVar << std::endl;
+
+        // Accessing the global variable from inside the class method
+        std::cout << "Global Variable (inside the class method): " << globalVar << std::endl;
+    }
+};
+
+int main() {
+    // Accessing the global variable from inside the main function
+    std::cout << "Global Variable (inside the main function): " << globalVar << std::endl;
+
+    demoLocalScope();
+
+    DemoClass obj;
+    obj.printClassVar();
+
+    // Trying to access the local variable from the main function will cause an error
+    // std::cout << "Trying to access Local Variable: " << localVar << std::endl;
+
+    return 0;
+}
